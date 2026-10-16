@@ -1,13 +1,14 @@
 [gd_scene format=4 uid="uid://u5sgl22x1tm5"]
 
-[ext_resource type="Texture2D" uid="uid://cojlx5y76tvjk" path="res://assets/Busy Cafe Asset Pack - Free Sample/Godot/spr_tile_busy_cafe_floor_auto_2x2.png" id="1_8jcu0"]
-[ext_resource type="Texture2D" uid="uid://olbiofvif7iw" path="res://assets/Cafe - Download File/Cafe-tiles.png" id="2_s5fj5"]
-[ext_resource type="Texture2D" uid="uid://bdat5ivqiv37p" path="res://assets/Pixel_16_interiors_v2_free/tiles and items.png" id="3_nutnv"]
-[ext_resource type="Texture2D" uid="uid://db7rsxxy8bufx" path="res://assets/cafe_arcadeassets.png" id="4_77x6i"]
-[ext_resource type="Texture2D" uid="uid://1vipqudjfvnf" path="res://assets/house/livingroom furniture.png" id="5_igif3"]
-[ext_resource type="Texture2D" uid="uid://dg55julb0deu0" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_FurnitureState1.png" id="6_b0k3n"]
-[ext_resource type="Texture2D" uid="uid://csswm5r1mj4i4" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_FurnitureState2.png" id="7_hl3hr"]
-[ext_resource type="Texture2D" uid="uid://f8yo2i8aqp71" path="res://assets/PPFurniturePackV1-FreeVer/PPFurniture Pack-FreeV.png" id="8_1hfj8"]
+[ext_resource type="Texture2D" uid="uid://cojlx5y76tvjk" path="res://assets/cafe_assets/Busy Cafe Asset Pack - Free Sample/Godot/spr_tile_busy_cafe_floor_auto_2x2.png" id="1_8jcu0"]
+[ext_resource type="Texture2D" uid="uid://olbiofvif7iw" path="res://assets/cafe_assets/Cafe - Download File/Cafe-tiles.png" id="2_s5fj5"]
+[ext_resource type="Texture2D" uid="uid://bdat5ivqiv37p" path="res://assets/cafe_assets/Pixel_16_interiors_v2_free/tiles and items.png" id="3_nutnv"]
+[ext_resource type="Texture2D" uid="uid://db7rsxxy8bufx" path="res://assets/cafe_assets/cafe_arcadeassets.png" id="4_77x6i"]
+[ext_resource type="Texture2D" uid="uid://1vipqudjfvnf" path="res://assets/cafe_assets/house/livingroom furniture.png" id="5_igif3"]
+[ext_resource type="Texture2D" uid="uid://dg55julb0deu0" path="res://assets/cafe_assets/Top-Down_Retro_Interior/TopDownHouse_FurnitureState1.png" id="6_b0k3n"]
+[ext_resource type="Texture2D" uid="uid://csswm5r1mj4i4" path="res://assets/cafe_assets/Top-Down_Retro_Interior/TopDownHouse_FurnitureState2.png" id="7_hl3hr"]
+[ext_resource type="Texture2D" uid="uid://f8yo2i8aqp71" path="res://assets/cafe_assets/PPFurniturePackV1-FreeVer/PPFurniture Pack-FreeV.png" id="8_1hfj8"]
+[ext_resource type="PackedScene" uid="uid://s6sx8sv3cjg8" path="res://scenes/player/player.tscn" id="9_b0k3n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8fvwg"]
 texture = ExtResource("1_8jcu0")
@@ -2160,3 +2161,6 @@ tile_set = SubResource("TileSet_kaadr")
 [node name="Interiors2ndLayer" type="TileMapLayer" parent="." unique_id=1906603216]
 tile_map_data = PackedByteArray("AAAEAAAAAAADAAoAAAAFAAAAAAAEAAoAAAAGAAAAAAADAAgAAAAHAAAAAAAHAAsAAAABAAMAAAAGAA8AAAABAAQAAAAGABAAAAAhAAAAAAAEAA8AAAAhAAEAAAAEABAAAAAiAAAAAAAFAA8AAAAiAAEAAAAFABAAAAAlABEAAAAbABcAAAAlABIAAAAbABgAAAAmABEAAAAcABcAAAAmABIAAAAcABgAAAASAAYAAAAbABYAAAASAAMAAAAbABUAAAABAAoAAAAbABMAAAABAAsAAAAbABQAAAACABQAAAAcABMAAAACABUAAAAcABQAAAAVAAAAAAAbABMAAAAVAAEAAAAbABQAAAA=")
 tile_set = SubResource("TileSet_2emqb")
+
+[node name="Player" parent="." unique_id=339564489 instance=ExtResource("9_b0k3n")]
+position = Vector2(168, 163)
