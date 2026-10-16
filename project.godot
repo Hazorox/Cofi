@@ -10,14 +10,28 @@ config_version=5
 
 [application]
 
-config/name="Temp Name"
+config/name="Cofi"
+config/description="Cozy Coffee Shop !!"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://bqy0kfy0jf65e"
 
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://addons/": "gray",
+"res://assets/": "red",
+"res://scenes/": "green",
+"res://scripts/": "yellow"
+}
 
 [physics]
 
