@@ -1,0 +1,180 @@
+[gd_scene format=3 uid="uid://dmcnvkyvvgus7"]
+
+[ext_resource type="Texture2D" uid="uid://d1aloejfo7giw" path="res://assets/kitchen assets/kitchen assets/Cabinet/Countertop.png" id="1_d2xl0"]
+[ext_resource type="Texture2D" uid="uid://b7knf3bjxac5j" path="res://assets/cwaso2.png" id="2_rq64b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bpykn"]
+atlas = ExtResource("2_rq64b")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sywkn"]
+atlas = ExtResource("2_rq64b")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5h3ra"]
+atlas = ExtResource("2_rq64b")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r01pn"]
+atlas = ExtResource("2_rq64b")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqfbo"]
+atlas = ExtResource("2_rq64b")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5r6j"]
+atlas = ExtResource("2_rq64b")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s7rlf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bpykn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sywkn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5h3ra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r01pn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqfbo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5r6j")
+}],
+"loop": 1,
+"name": &"cut",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7wsd"]
+size = Vector2(570.68005, 44.49385)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7rlf"]
+size = Vector2(40.5, 520)
+
+[node name="CwasoCut" type="Node2D" unique_id=515972311]
+
+[node name="map" type="Node2D" parent="." unique_id=1807791916]
+
+[node name="Countertop" type="Sprite2D" parent="map" unique_id=1951840272]
+position = Vector2(647, 357)
+scale = Vector2(92.42857, 59.285717)
+texture = ExtResource("1_d2xl0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1764528362]
+position = Vector2(611, 374)
+scale = Vector2(14.125, 14.125)
+sprite_frames = SubResource("SpriteFrames_s7rlf")
+animation = &"cut"
+autoplay = "cut"
+frame = 2
+frame_progress = 0.22072262
+
+[node name="cut_1" type="Node2D" parent="." unique_id=1698233403]
+position = Vector2(-18, -37)
+
+[node name="ColorRect" type="ColorRect" parent="cut_1" unique_id=569690548]
+offset_left = 294.00003
+offset_top = 117.0
+offset_right = 319.00003
+offset_bottom = 187.0
+rotation = -0.30347365
+color = Color(0.45364925, 0.45364925, 0.45364925, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="cut_1" unique_id=1485716758]
+offset_left = 334.0001
+offset_top = 221.99995
+offset_right = 359.0001
+offset_bottom = 291.99994
+rotation = -0.30347365
+color = Color(0.45364925, 0.45364925, 0.45364925, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="cut_1" unique_id=1687431210]
+offset_left = 371.0
+offset_top = 340.00003
+offset_right = 396.0
+offset_bottom = 410.0
+rotation = -0.30347365
+color = Color(0.45364925, 0.45364925, 0.45364925, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="cut_1" unique_id=407798611]
+offset_left = 422.0
+offset_top = 456.99994
+offset_right = 447.0
+offset_bottom = 526.99994
+rotation = -0.30347365
+color = Color(0.45364925, 0.45364925, 0.45364925, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="cut_1" unique_id=682837180]
+offset_left = 466.0
+offset_top = 578.99994
+offset_right = 491.0
+offset_bottom = 648.99994
+rotation = -0.30347365
+color = Color(0.45364925, 0.45364925, 0.45364925, 1)
+
+[node name="Area2D" type="Area2D" parent="cut_1" unique_id=1203661352]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cut_1/Area2D" unique_id=306234090]
+position = Vector2(399.99997, 376.99994)
+rotation = 1.238305
+shape = SubResource("RectangleShape2D_s7wsd")
+
+[node name="cut_2" type="Node2D" parent="." unique_id=664963024]
+
+[node name="ColorRect" type="ColorRect" parent="cut_2" unique_id=328912239]
+offset_left = 489.0
+offset_top = 539.0
+offset_right = 515.0
+offset_bottom = 603.0
+color = Color(0.45490196, 0.45490196, 0.45490196, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="cut_2" unique_id=884649663]
+offset_left = 490.0
+offset_top = 445.0
+offset_right = 516.0
+offset_bottom = 509.0
+color = Color(0.45490196, 0.45490196, 0.45490196, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="cut_2" unique_id=607744104]
+offset_left = 490.0
+offset_top = 364.0
+offset_right = 516.0
+offset_bottom = 428.0
+color = Color(0.45490196, 0.45490196, 0.45490196, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="cut_2" unique_id=1359849385]
+offset_left = 489.0
+offset_top = 281.0
+offset_right = 515.0
+offset_bottom = 345.0
+color = Color(0.45490196, 0.45490196, 0.45490196, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="cut_2" unique_id=447114733]
+offset_left = 488.0
+offset_top = 192.0
+offset_right = 514.0
+offset_bottom = 256.0
+color = Color(0.45490196, 0.45490196, 0.45490196, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="cut_2" unique_id=1317225091]
+offset_left = 487.0
+offset_top = 103.0
+offset_right = 513.0
+offset_bottom = 167.0
+color = Color(0.45490196, 0.45490196, 0.45490196, 1)
+
+[node name="Area2D" type="Area2D" parent="cut_2" unique_id=734484405]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cut_2/Area2D" unique_id=67836121]
+position = Vector2(500.75, 353)
+shape = SubResource("RectangleShape2D_s7rlf")
+
+[node name="cut3" type="Node2D" parent="." unique_id=1412100063]
