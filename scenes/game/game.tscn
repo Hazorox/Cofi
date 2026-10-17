@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c0j3rydr5r7ax"]
+
+[ext_resource type="PackedScene" uid="uid://u5sgl22x1tm5" path="res://scenes/cofi/cofi.tscn" id="1_7h61r"]
+[ext_resource type="PackedScene" uid="uid://s6sx8sv3cjg8" path="res://scenes/player/player.tscn" id="2_0sr1o"]
+
+[node name="Game" type="Node2D" unique_id=1664967722]
+
+[node name="Cofi" parent="." unique_id=1432555401 instance=ExtResource("1_7h61r")]
+
+[node name="Player" parent="." unique_id=339564489 instance=ExtResource("2_0sr1o")]
+position = Vector2(83, 327)
+
+[node name="audio" type="AudioStreamPlayer2D" parent="." unique_id=1772376848]
+position = Vector2(83, 327)
