@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-var speed : int = 200
+var speed : int = 150
 var heading := Vector2.DOWN
 
 func _process(_delta: float) -> void:

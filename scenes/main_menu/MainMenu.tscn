@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://7dp22wv6x448" path="res://assets/mug_main_menu.png" id="2_wckin"]
 [ext_resource type="FontFile" uid="uid://bcwih108w6w07" path="res://assets/fonts/Pixelitta-Regular.ttf" id="3_arvcj"]
 [ext_resource type="Texture2D" uid="uid://y0qk8q4fi1rx" path="res://assets/sign.png" id="4_6k0m2"]
+[ext_resource type="FontFile" uid="uid://dqeyav1db84t6" path="res://assets/fonts/upheavtt.ttf" id="4_wckin"]
 [ext_resource type="Texture2D" uid="uid://ywaml4u1bu30" path="res://assets/sign_pressed.png" id="5_qq55g"]
 [ext_resource type="Texture2D" uid="uid://c086vs5mjh18d" path="res://assets/sign_hover.png" id="6_pkvjm"]
 
@@ -15,15 +16,19 @@ script/source = "extends CanvasLayer
 @onready var open_label = $open
 
 func _ready()->void:
+	# Show label on focus or mouse
 	btn.focus_entered.connect(show_label)
 	btn.mouse_entered.connect(show_label)
 	
+	# Hide label on unfocus or mouse
 	btn.mouse_exited.connect(hide_label)
 	btn.focus_exited.connect(hide_label)
 	
+	# Change scene on press
 	btn.pressed.connect(func(): get_tree().change_scene_to_file(\"res://scenes/game/game.tscn\"))
 
 func _process(_delta:float)->void:
+	# Grab focus on pressing space
 	if Input.is_action_just_pressed(\"interact\"):
 		btn.grab_focus()
 
@@ -39,19 +44,20 @@ func hide_label():
 
 [sub_resource type="LabelSettings" id="LabelSettings_6qse2"]
 font = ExtResource("3_arvcj")
-font_size = 96
+font_size = 64
 font_color = Color(0.9013771, 0.5118667, 0.20574728, 1)
 outline_size = 8
 outline_color = Color(0.6426776, 0.53192353, 0.3317493, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_4vfji"]
-font_size = 32
+font = ExtResource("4_wckin")
+font_size = 24
 
 [sub_resource type="Theme" id="Theme_tr8j5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nfrx5"]
 font = ExtResource("3_arvcj")
-font_size = 82
+font_size = 48
 font_color = Color(0, 0, 0, 1)
 outline_size = 8
 outline_color = Color(0.65957713, 0.5617362, 0.4060739, 1)
@@ -70,33 +76,34 @@ expand_mode = 1
 metadata/_edit_lock_ = true
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=386534486]
-offset_left = 693.0
-offset_top = 14.0
-offset_right = 1343.0
-offset_bottom = 714.0
+offset_left = 359.0
+offset_top = 44.0
+offset_right = 651.0
+offset_bottom = 354.0
 texture = ExtResource("2_wckin")
 
 [node name="title" type="Label" parent="." unique_id=1424001399]
-offset_left = 52.0
-offset_top = 68.0
-offset_right = 607.0
-offset_bottom = 164.0
+offset_left = 6.0
+offset_top = 19.0
+offset_right = 561.0
+offset_bottom = 115.0
 text = "COFI SHOP"
 label_settings = SubResource("LabelSettings_6qse2")
 
 [node name="authors" type="Label" parent="." unique_id=161564233]
-offset_left = 101.0
-offset_top = 668.0
-offset_right = 559.0
-offset_bottom = 713.0
+offset_left = 36.0
+offset_top = 332.0
+offset_right = 494.0
+offset_bottom = 377.0
 text = "By Hazoro - AboEl5yr - Vii"
 label_settings = SubResource("LabelSettings_4vfji")
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=1504782641]
-offset_left = 74.0
-offset_top = 105.0
-offset_right = 585.0
-offset_bottom = 631.0
+offset_left = 80.0
+offset_top = 20.0
+offset_right = 591.0
+offset_bottom = 546.0
+scale = Vector2(0.5, 0.5)
 theme = SubResource("Theme_tr8j5")
 texture_normal = ExtResource("4_6k0m2")
 texture_pressed = ExtResource("5_qq55g")
@@ -105,10 +112,10 @@ texture_focused = ExtResource("6_pkvjm")
 stretch_mode = 0
 
 [node name="closed" type="Label" parent="." unique_id=2115193189]
-offset_left = 134.0
-offset_top = 413.0
-offset_right = 519.0
-offset_bottom = 509.0
+offset_left = 14.0
+offset_top = 153.0
+offset_right = 399.0
+offset_bottom = 249.0
 text = "CLOSED"
 label_settings = SubResource("LabelSettings_nfrx5")
 horizontal_alignment = 1
@@ -116,10 +123,10 @@ vertical_alignment = 1
 
 [node name="open" type="Label" parent="." unique_id=1602311124]
 visible = false
-offset_left = 134.0
-offset_top = 413.0
-offset_right = 519.0
-offset_bottom = 509.0
+offset_left = 10.0
+offset_top = 154.0
+offset_right = 395.0
+offset_bottom = 250.0
 text = "OPEN"
 label_settings = SubResource("LabelSettings_nfrx5")
 horizontal_alignment = 1
