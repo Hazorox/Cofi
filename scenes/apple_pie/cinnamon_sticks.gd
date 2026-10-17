@@ -15,3 +15,8 @@ func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int
 				drag_offset = global_position - get_global_mouse_position()
 			else:
 				dragging = false
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("apple_pie_pot"):
+		Globals.cinnamon_in_apple_pot += 1
+		queue_free()

@@ -1,4 +1,10 @@
 extends Node
 
 var apple_pie_slices := 0
+var apple_pie_slices_in_pot := 0
+var cinnamon_in_apple_pot := 0
+var butter_in_apple_pot := false
+var milk_in_apple_pot := false
+var apple_pie_in_oven := false
+var player_has_apple_pie := false
 var target = "coffee"

@@ -1,21 +1,21 @@
 [gd_scene format=3 uid="uid://cxw5ye5xq5wl6"]
 
-[ext_resource type="Texture2D" uid="uid://f8yo2i8aqp71" path="res://assets/cafe_assets/PPFurniturePackV1-FreeVer/PPFurniture Pack-FreeV.png" id="1_6jmdq"]
+[ext_resource type="Texture2D" uid="uid://d337inksnraks" path="res://assets/pixelinterior_LRK_v1.1/kitchen_LRK.png" id="1_6jmdq"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ad8vj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_em18g"]
 atlas = ExtResource("1_6jmdq")
-region = Rect2(80, 192, 32, 32)
+region = Rect2(193, 208, 30, 38)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_niggu"]
-size = Vector2(18, 7)
+size = Vector2(26, 16)
 
 [node name="Oven" type="Node2D" unique_id=1555987056]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=516030743]
-texture = SubResource("AtlasTexture_ad8vj")
+texture = SubResource("AtlasTexture_em18g")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1523440027]
+[node name="Area2D" type="Area2D" parent="." unique_id=1523440027 groups=["oven"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=935083427]
-position = Vector2(1, 10)
+position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_niggu")
