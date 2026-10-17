@@ -79,6 +79,7 @@ animations = [{
 }]
 
 [node name="cwaso" type="Node2D" unique_id=915439066]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_j1nq8")
 
 [node name="map" type="Node2D" parent="." unique_id=1023607387]

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dg4sqp0seredp"]
+
+[ext_resource type="Script" uid="uid://c5wqx2mt367mq" path="res://scenes/apple_pie/cinnamon_sticks.gd" id="1_f67ru"]
+[ext_resource type="Texture2D" uid="uid://bigvd4ossykug" path="res://assets/vii assets/cinnamon_stick.png" id="1_utf4e"]
+
+[node name="CinnamonSticks" type="Node2D" unique_id=1218499004]
+script = ExtResource("1_f67ru")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1016999987]
+texture = ExtResource("1_utf4e")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=791688452]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1703416530]
+polygon = PackedVector2Array(-30, 18, -30, 25, -29, 27, -28, 28, -26, 29, -23, 30, -18, 30, 29, -17, 29, -24, 27, -27, 26, -28, 24, -29, 17, -29)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

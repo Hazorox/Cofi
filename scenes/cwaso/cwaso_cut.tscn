@@ -101,6 +101,7 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [node name="CwasoCut" type="Node2D" unique_id=515972311]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_rq64b")
 
 [node name="map" type="Node2D" parent="." unique_id=1807791916]
