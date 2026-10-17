@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://ceqebv6qgs3a7"]
+
+[ext_resource type="Script" uid="uid://bp6uygbquu8oj" path="res://scenes/ui/ui.gd" id="1_7vp6q"]
+[ext_resource type="Script" uid="uid://d2twvqgyouo" path="res://scenes/ui/pause.gd" id="1_pfayw"]
+[ext_resource type="Texture2D" uid="uid://b40y007ex6lfy" path="res://assets/main_menu_bg.jpg" id="1_u7n8c"]
+[ext_resource type="Texture2D" uid="uid://yjwmewwo13t0" path="res://assets/sticky_notes.png" id="2_aac20"]
+[ext_resource type="FontFile" uid="uid://b2nuykbdi5yru" path="res://assets/fonts/Daydream DEMO.otf" id="3_g5kmx"]
+[ext_resource type="FontFile" uid="uid://bcwih108w6w07" path="res://assets/fonts/Pixelitta-Regular.ttf" id="5_7vp6q"]
+[ext_resource type="FontFile" uid="uid://begabvq08yhes" path="res://assets/fonts/MEMENU.otf" id="6_jcn1r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nfrx5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0hvcy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tr8j5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8t61q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l2nlq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4hts0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nfrx5"]
+font = ExtResource("5_7vp6q")
+font_size = 64
+font_color = Color(0.81960785, 0.8, 0.42745098, 1)
+outline_size = 16
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_uegxj"]
+font = ExtResource("6_jcn1r")
+font_size = 64
+font_color = Color(0.5985867, 0.36504805, 0.23846379, 1)
+outline_size = 16
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Ui" type="Control" unique_id=1048639939]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7vp6q")
+
+[node name="pause" type="CanvasLayer" parent="." unique_id=1724200059]
+visible = false
+script = ExtResource("1_pfayw")
+
+[node name="bg" type="TextureRect" parent="pause" unique_id=865623145]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_u7n8c")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="pause" unique_id=1245416176]
+offset_left = 284.99997
+offset_top = 4.0
+offset_right = 412.99997
+offset_bottom = 132.0
+scale = Vector2(2.75, 2.75)
+texture = ExtResource("2_aac20")
+
+[node name="continue" type="Button" parent="pause" unique_id=648946769]
+offset_left = 394.0
+offset_top = 162.0
+offset_right = 546.0
+offset_bottom = 196.0
+theme_override_colors/font_color = Color(0.14456138, 0.64269966, 0, 1)
+theme_override_colors/font_focus_color = Color(0.19598576, 0.82068616, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.2148098, 0.88486195, 0, 1)
+theme_override_colors/font_hover_color = Color(0.19607843, 0.81960785, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("3_g5kmx")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nfrx5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_0hvcy")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_tr8j5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8t61q")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_l2nlq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4hts0")
+text = "CONTINUE"
+
+[node name="fullscreen" type="Button" parent="pause" unique_id=674481273]
+offset_left = 376.0
+offset_top = 214.0
+offset_right = 557.0
+offset_bottom = 248.0
+theme_override_colors/font_color = Color(0.86627614, 0.6950757, 0.06767538, 1)
+theme_override_colors/font_focus_color = Color(0.92143583, 0.7396709, 0.09133112, 1)
+theme_override_colors/font_pressed_color = Color(0.9818546, 0.79505795, 0.15845981, 1)
+theme_override_colors/font_hover_color = Color(0.92156863, 0.7411765, 0.09019608, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("3_g5kmx")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nfrx5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_0hvcy")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_tr8j5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8t61q")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_l2nlq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4hts0")
+text = "FULLSCREEN"
+
+[node name="exit" type="Button" parent="pause" unique_id=185549458]
+offset_left = 389.0
+offset_top = 269.0
+offset_right = 541.0
+offset_bottom = 303.0
+theme_override_colors/font_color = Color(0.8352941, 0.20784314, 0.13333334, 1)
+theme_override_colors/font_focus_color = Color(0.9254902, 0.25490198, 0.17254902, 1)
+theme_override_colors/font_pressed_color = Color(0.9720991, 0.40983588, 0.32733512, 1)
+theme_override_colors/font_hover_color = Color(0.9254902, 0.25490198, 0.17254902, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("3_g5kmx")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nfrx5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_0hvcy")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_tr8j5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8t61q")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_l2nlq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4hts0")
+text = "EXIT"
+
+[node name="Label" type="Label" parent="pause" unique_id=1847008411]
+offset_left = 9.0
+offset_top = 21.0
+offset_right = 316.0
+offset_bottom = 99.0
+text = "Cofi SHOP"
+label_settings = SubResource("LabelSettings_nfrx5")
+
+[node name="Label2" type="Label" parent="pause" unique_id=1490662373]
+offset_left = 15.0
+offset_top = 153.0
+offset_right = 322.0
+offset_bottom = 351.0
+text = "ON
+BREAK"
+label_settings = SubResource("LabelSettings_uegxj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="pause/continue" to="pause" method="_on_continue_pressed"]
+[connection signal="pressed" from="pause/fullscreen" to="pause" method="_on_fullscreen_pressed"]
+[connection signal="pressed" from="pause/exit" to="pause" method="_on_exit_pressed"]
