@@ -7,8 +7,8 @@
 
 [node name="Cofi" parent="." unique_id=1432555401 instance=ExtResource("1_7h61r")]
 
-[node name="Player" parent="." unique_id=339564489 instance=ExtResource("2_0sr1o")]
+[node name="Player" parent="Cofi" unique_id=339564489 instance=ExtResource("2_0sr1o")]
 position = Vector2(83, 327)
 
-[node name="audio" type="AudioStreamPlayer2D" parent="." unique_id=1772376848]
+[node name="audio" type="AudioStreamPlayer2D" parent="Cofi" unique_id=1772376848]
 position = Vector2(83, 327)

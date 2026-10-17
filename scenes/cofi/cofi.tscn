@@ -2590,3 +2590,4 @@ script = ExtResource("9_b0k3n")
 shape = SubResource("CircleShape2D_nfrx5")
 
 [connection signal="area_entered" from="interactables/coffee_machine" to="interactables/coffee_machine" method="area_entered"]
+[connection signal="area_exited" from="interactables/coffee_machine" to="interactables/coffee_machine" method="area_exited"]
