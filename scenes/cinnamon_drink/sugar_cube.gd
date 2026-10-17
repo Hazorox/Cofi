@@ -16,5 +16,7 @@ func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int
 			else:
 				dragging = false
 
-func _on_area_2d_area_entered(_area: Area2D) -> void:
-	pass
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("blender"):
+		Globals.cinnamon_drink_sugar_cubes += 1
+		queue_free()

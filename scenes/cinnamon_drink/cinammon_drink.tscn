@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://pgbuml50c01c" path="res://scenes/cinnamon_drink/cinammon_drink.gd" id="1_v6ucu"]
 [ext_resource type="Texture2D" uid="uid://bdat5ivqiv37p" path="res://assets/cafe_assets/Pixel_16_interiors_v2_free/tiles and items.png" id="1_xyfj0"]
 [ext_resource type="PackedScene" uid="uid://crgmprkwqel10" path="res://scenes/cinnamon_drink/blender.tscn" id="3_c7tdn"]
+[ext_resource type="FontFile" uid="uid://b3dhoat5bpovy" path="res://assets/fonts/MEMENU.ttf" id="4_hpg0v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v6ucu"]
 texture = ExtResource("1_xyfj0")
@@ -98,3 +99,15 @@ tile_set = SubResource("TileSet_onkbk")
 [node name="Blender" parent="." unique_id=1612134387 instance=ExtResource("3_c7tdn")]
 position = Vector2(312, 304)
 scale = Vector2(4, 4)
+
+[node name="TimerToRestart" type="Timer" parent="." unique_id=404864791]
+wait_time = 15.0
+autostart = true
+
+[node name="Label" type="Label" parent="." unique_id=1497212366]
+offset_right = 78.0
+offset_bottom = 31.0
+theme_override_fonts/font = ExtResource("4_hpg0v")
+text = "Time till restart:"
+
+[connection signal="timeout" from="TimerToRestart" to="." method="_on_timer_to_restart_timeout"]
