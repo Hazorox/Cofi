@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://t34ucu10vtvq"]
+
+[ext_resource type="Script" uid="uid://8ncue6fsqgyd" path="res://scenes/apple_pie/butter.gd" id="1_aruti"]
+[ext_resource type="Texture2D" uid="uid://c10smdi82otuv" path="res://assets/vii assets/butter.png" id="1_au4fx"]
+
+[node name="Butter" type="Node2D" unique_id=1975464551]
+script = ExtResource("1_aruti")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=267829186]
+texture = ExtResource("1_au4fx")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1248023794]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=375465500]
+polygon = PackedVector2Array(-74, 44, -65, 53, 33, 54, 75, 15, 75, -47, 65, -54, -34, -54, -73, -14)
