@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://i4cgqxnvcsnf"]
+
+[ext_resource type="Texture2D" uid="uid://dyadh4kt7vjd2" path="res://assets/vii assets/ProgressBar/ProgressBar_border.png" id="1_xqw6d"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_key5l"]
+load_path = "res://.godot/imported/ProgressBar_fill.png-36e191187466f8740656408dc007ec49.ctex"
+
+[node name="ApplePieCookingBar" type="Node2D" unique_id=834157702]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=2077633863]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_under = ExtResource("1_xqw6d")
+texture_over = ExtResource("1_xqw6d")
+texture_progress = SubResource("CompressedTexture2D_key5l")
+texture_progress_offset = Vector2(1, 1)

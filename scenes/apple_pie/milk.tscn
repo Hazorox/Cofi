@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bgcifsv3th27o"]
+
+[ext_resource type="Script" uid="uid://60xik1eefbei" path="res://scenes/apple_pie/milk.gd" id="1_equx6"]
+[ext_resource type="Texture2D" uid="uid://cua7lys1kiyih" path="res://assets/vii assets/mlk.png" id="1_wifx3"]
+
+[node name="Milk" type="Node2D" unique_id=1323078490]
+script = ExtResource("1_equx6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1856558160]
+texture = ExtResource("1_wifx3")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1516791020]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=6950532]
+polygon = PackedVector2Array(-44, 52, -28, 71, 26, 70, 43, 56, 44, -32, 29, -43, 37, -67, 37, -82, 28, -91, -28, -92, -36, -84, -37, -68, -28, -44, -37, -42, -45, -34)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
