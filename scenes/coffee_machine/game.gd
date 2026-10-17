@@ -1,5 +1,8 @@
 extends CanvasLayer
 
+signal finished
+
+@export var coffee_type = ""
 @export var speed = 120 # amount of degrees per sec
 @export var min_radius := 4
 @onready var bean:Area2D = $bean2
@@ -8,13 +11,26 @@ extends CanvasLayer
 @onready var green_collision = $green_area/CollisionShape2D
 @onready var green_panel = $green_area/panel
 var valid = false # On green spot
-
+var hits := 0
+var hits_to_goal :=0
 func _ready() -> void:
 	# Make valid when both overlap
 	green.area_entered.connect(green_entered)
 	green.area_exited.connect(green_exited)
 
 func _process(delta: float) -> void:
+	# Change speed and hits to win
+	match coffee_type:
+		"latte":
+			speed = 120
+			hits_to_goal = 2
+		"chocolate":
+			speed=180
+			hits_to_goal = 4
+		"espresso":
+			speed=240
+			hits_to_goal=6
+	
 	# Rotate the bean around the centre of Area2D
 	bean.rotation_degrees += delta*speed
 	
@@ -23,9 +39,15 @@ func _process(delta: float) -> void:
 		green.rotation_degrees= randi_range(-360,360)+40
 		
 		# Reduce size
-		green_panel.size = green_panel.size - Vector2(5,5)
-		green_collision.shape.radius = max(min_radius, green_collision.shape.radius-1.5)
-		bean_collision.shape.radius  = max(min_radius,bean_collision.shape.radius-1.5)
+		var radius = max(min_radius,green_collision.shape.radius - 1.5)
+		green_collision.shape.radius = radius
+		bean_collision.shape.radius = max(min_radius,bean_collision.shape.radius - 1.5)
+		
+		green_panel.size = Vector2.ONE * radius *2
+		green_panel.position = green_collision.position - green_panel.size / 2
+		hits+=1
+		if hits==5:
+			finished.emit()
 
 # Control Valid
 func green_entered(Area:Area2D)->void:
