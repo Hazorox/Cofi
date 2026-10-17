@@ -1,3 +1,68 @@
 [gd_scene format=3 uid="uid://bq8uh0k25iuf8"]
 
+[ext_resource type="Texture2D" uid="uid://dy1kqbulc1w4e" path="res://assets/coffee-machine-bg.png" id="1_5iaqh"]
+[ext_resource type="Texture2D" uid="uid://mng15ymlmat2" path="res://assets/coffee_topdown.png" id="2_5tkhn"]
+[ext_resource type="Texture2D" uid="uid://dw3lkpnsligit" path="res://assets/coffee_bean.png" id="3_f35ns"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nfrx5"]
+bg_color = Color(0.45612794, 0.71846986, 0, 1)
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nfrx5"]
+radius = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0hvcy"]
+radius = 21.023796
+
 [node name="CoffeeMachine" type="Node2D" unique_id=971991754]
+
+[node name="canvas" type="CanvasLayer" parent="." unique_id=24811779]
+
+[node name="TextureRect" type="TextureRect" parent="canvas" unique_id=2108513250]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_5iaqh")
+expand_mode = 1
+
+[node name="topdown" type="TextureRect" parent="canvas" unique_id=1143756531]
+offset_left = 320.0
+offset_top = -11.999998
+offset_right = 384.0
+offset_bottom = 52.0
+scale = Vector2(5, 5)
+texture = ExtResource("2_5tkhn")
+
+[node name="green_area" type="Area2D" parent="canvas" unique_id=1786038596]
+position = Vector2(482, 145)
+
+[node name="ColorRect" type="Panel" parent="canvas/green_area" unique_id=1495919539]
+offset_left = 32.0
+offset_top = -69.0
+offset_right = 72.0
+offset_bottom = -29.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nfrx5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="canvas/green_area" unique_id=1401159412]
+position = Vector2(52, -49)
+shape = SubResource("CircleShape2D_nfrx5")
+
+[node name="bean2" type="Area2D" parent="canvas" unique_id=950400886]
+position = Vector2(482, 145)
+
+[node name="bean" type="TextureRect" parent="canvas/bean2" unique_id=894203206]
+offset_left = -27.0
+offset_top = 54.0
+offset_right = 37.0
+offset_bottom = 118.0
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_f35ns")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="canvas/bean2" unique_id=751627091]
+position = Vector2(-3, 80)
+shape = SubResource("CircleShape2D_0hvcy")
