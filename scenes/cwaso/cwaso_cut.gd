@@ -16,6 +16,7 @@ extends Node2D
 @onready var oven: Button = $oven
 @onready var audio: AudioStreamPlayer = $AudioStreamPlayer
 func _ready() -> void:
+	Input.set_custom_mouse_cursor(preload("res://assets/icons/icons/icon2.png"), Input.CURSOR_ARROW, Vector2(8,8))
 	dough.stop()
 	cut_1.show()
 	cut_2.hide()
@@ -88,9 +89,9 @@ func roll_cwaso():
 	
 func cinnamon_oven():
 	audio.play()
-	await audio.finished
 	cwasos.hide()
 	oven.hide()
+	await audio.finished
 	cooked.show()
 	await get_tree().create_timer(1.0).timeout
 	get_tree().change_scene_to_file("res://scenes/cofi/cofi.tscn")
