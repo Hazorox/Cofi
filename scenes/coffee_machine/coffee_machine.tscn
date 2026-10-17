@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://bq8uh0k25iuf8"]
 
 [ext_resource type="Texture2D" uid="uid://dy1kqbulc1w4e" path="res://assets/coffee-machine-bg.png" id="1_5iaqh"]
+[ext_resource type="Script" uid="uid://baxllossshyy8" path="res://scenes/coffee_machine/coffee_machine.gd" id="1_t78eo"]
 [ext_resource type="Texture2D" uid="uid://mng15ymlmat2" path="res://assets/coffee_topdown.png" id="2_5tkhn"]
 [ext_resource type="Texture2D" uid="uid://dw3lkpnsligit" path="res://assets/coffee_bean.png" id="3_f35ns"]
+[ext_resource type="Script" uid="uid://1lsqlpwov7x5" path="res://scenes/coffee_machine/pregame.gd" id="3_v8h8f"]
+[ext_resource type="Texture2D" uid="uid://yjwmewwo13t0" path="res://assets/sticky_notes.png" id="4_f35ns"]
+[ext_resource type="FontFile" uid="uid://cd0xo6gbmgcqp" path="res://assets/fonts/Anak Orang.ttf" id="5_12a3k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nfrx5"]
 bg_color = Color(0.45612794, 0.71846986, 0, 1)
@@ -17,11 +21,82 @@ radius = 20.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_0hvcy"]
 radius = 21.023796
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_12a3k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v8h8f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t78eo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_54hl4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2x5f6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_muujr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ehcqf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_impgx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_md5py"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5uqvb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q6d4i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jddi5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gvtdx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_avi0q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rctpc"]
+
 [node name="CoffeeMachine" type="Node2D" unique_id=971991754]
+script = ExtResource("1_t78eo")
 
-[node name="canvas" type="CanvasLayer" parent="." unique_id=24811779]
+[node name="game" type="CanvasLayer" parent="." unique_id=24811779]
 
-[node name="TextureRect" type="TextureRect" parent="canvas" unique_id=2108513250]
+[node name="topdown" type="TextureRect" parent="game" unique_id=1143756531]
+offset_left = 320.0
+offset_top = -11.999998
+offset_right = 384.0
+offset_bottom = 52.0
+scale = Vector2(5, 5)
+texture = ExtResource("2_5tkhn")
+
+[node name="green_area" type="Area2D" parent="game" unique_id=1786038596]
+position = Vector2(482, 145)
+
+[node name="ColorRect" type="Panel" parent="game/green_area" unique_id=1495919539]
+offset_left = 32.0
+offset_top = -69.0
+offset_right = 72.0
+offset_bottom = -29.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nfrx5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="game/green_area" unique_id=1401159412]
+position = Vector2(52, -49)
+shape = SubResource("CircleShape2D_nfrx5")
+
+[node name="bean2" type="Area2D" parent="game" unique_id=950400886]
+position = Vector2(482, 145)
+
+[node name="bean" type="TextureRect" parent="game/bean2" unique_id=894203206]
+offset_left = -27.0
+offset_top = 54.0
+offset_right = 37.0
+offset_bottom = 118.0
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_f35ns")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="game/bean2" unique_id=751627091]
+position = Vector2(-3, 80)
+shape = SubResource("CircleShape2D_0hvcy")
+
+[node name="pregame" type="CanvasLayer" parent="." unique_id=985958996]
+script = ExtResource("3_v8h8f")
+
+[node name="bg" type="TextureRect" parent="pregame" unique_id=2108513250]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -30,39 +105,74 @@ grow_vertical = 2
 texture = ExtResource("1_5iaqh")
 expand_mode = 1
 
-[node name="topdown" type="TextureRect" parent="canvas" unique_id=1143756531]
-offset_left = 320.0
-offset_top = -11.999998
-offset_right = 384.0
-offset_bottom = 52.0
-scale = Vector2(5, 5)
-texture = ExtResource("2_5tkhn")
+[node name="notes" type="TextureRect" parent="pregame" unique_id=546472934]
+offset_left = 378.0
+offset_top = -9.000001
+offset_right = 506.0
+offset_bottom = 119.0
+scale = Vector2(2.1, 2.1)
+texture = ExtResource("4_f35ns")
 
-[node name="green_area" type="Area2D" parent="canvas" unique_id=1786038596]
-position = Vector2(482, 145)
+[node name="buttons" type="VSplitContainer" parent="pregame" unique_id=965579908]
+offset_left = 378.0
+offset_top = 107.0
+offset_right = 668.0
+offset_bottom = 224.0
+theme_override_constants/separation = 8
+split_offsets = PackedInt32Array(31, 74)
+dragging_enabled = false
+split_offset = 31
 
-[node name="ColorRect" type="Panel" parent="canvas/green_area" unique_id=1495919539]
-offset_left = 32.0
-offset_top = -69.0
-offset_right = 72.0
-offset_bottom = -29.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_nfrx5")
+[node name="latte" type="Button" parent="pregame/buttons" unique_id=1513116617]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7137255, 0.43137255, 0.40784314, 1)
+theme_override_colors/font_focus_color = Color(0.7647059, 0.48235294, 0.45882353, 1)
+theme_override_colors/font_pressed_color = Color(0.8407897, 0.5948927, 0.5721145, 1)
+theme_override_colors/font_hover_color = Color(0.7647059, 0.48235294, 0.45882353, 1)
+theme_override_colors/font_outline_color = Color(0.4, 0.22352941, 0.20392157, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("5_12a3k")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_12a3k")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_v8h8f")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_t78eo")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_54hl4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2x5f6")
+text = "Latte (Easy)"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="canvas/green_area" unique_id=1401159412]
-position = Vector2(52, -49)
-shape = SubResource("CircleShape2D_nfrx5")
+[node name="chocolate" type="Button" parent="pregame/buttons" unique_id=527340416]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6901961, 0.34901962, 0.20392157, 1)
+theme_override_colors/font_focus_color = Color(0.8156863, 0.4392157, 0.2784314, 1)
+theme_override_colors/font_pressed_color = Color(0.89948815, 0.539579, 0.38975376, 1)
+theme_override_colors/font_hover_color = Color(0.8171057, 0.4383011, 0.27984443, 1)
+theme_override_colors/font_outline_color = Color(0.43529412, 0.20392157, 0.105882354, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("5_12a3k")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_muujr")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ehcqf")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_impgx")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_md5py")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5uqvb")
+text = "Choco & Cinnamon
+(Normal)"
 
-[node name="bean2" type="Area2D" parent="canvas" unique_id=950400886]
-position = Vector2(482, 145)
+[node name="espresso" type="Button" parent="pregame/buttons" unique_id=1236858973]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7647059, 0.22745098, 0.23529412, 1)
+theme_override_colors/font_focus_color = Color(0.8862745, 0.30588236, 0.30588236, 1)
+theme_override_colors/font_pressed_color = Color(0.9456294, 0.4450863, 0.42666736, 1)
+theme_override_colors/font_hover_color = Color(0.8862745, 0.30588236, 0.30588236, 1)
+theme_override_colors/font_outline_color = Color(0.5092074, 0.092049696, 0.1682907, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("5_12a3k")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_q6d4i")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jddi5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_gvtdx")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_avi0q")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rctpc")
+text = "Espresso 💋 (HARD)"
 
-[node name="bean" type="TextureRect" parent="canvas/bean2" unique_id=894203206]
-offset_left = -27.0
-offset_top = 54.0
-offset_right = 37.0
-offset_bottom = 118.0
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("3_f35ns")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="canvas/bean2" unique_id=751627091]
-position = Vector2(-3, 80)
-shape = SubResource("CircleShape2D_0hvcy")
+[connection signal="pressed" from="pregame/buttons/latte" to="pregame" method="_on_latte_pressed"]
+[connection signal="pressed" from="pregame/buttons/chocolate" to="pregame" method="_on_chocolate_pressed"]
+[connection signal="pressed" from="pregame/buttons/espresso" to="pregame" method="_on_espresso_pressed"]
