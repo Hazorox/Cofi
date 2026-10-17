@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dg55julb0deu0" path="res://assets/cafe_assets/Top-Down_Retro_Interior/TopDownHouse_FurnitureState1.png" id="6_b0k3n"]
 [ext_resource type="Texture2D" uid="uid://csswm5r1mj4i4" path="res://assets/cafe_assets/Top-Down_Retro_Interior/TopDownHouse_FurnitureState2.png" id="7_hl3hr"]
 [ext_resource type="Texture2D" uid="uid://f8yo2i8aqp71" path="res://assets/cafe_assets/PPFurniturePackV1-FreeVer/PPFurniture Pack-FreeV.png" id="8_1hfj8"]
+[ext_resource type="Script" uid="uid://jofbav505pvi" path="res://scenes/cofi/coffee_machine.gd" id="9_b0k3n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8fvwg"]
 texture = ExtResource("1_8jcu0")
@@ -2149,6 +2150,9 @@ size = Vector2(640, 14)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_igif3"]
 size = Vector2(20, 388)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_nfrx5"]
+radius = 38.052597
+
 [node name="Cofi" type="Node2D" unique_id=1432555401]
 
 [node name="TileLayers" type="Node2D" parent="." unique_id=625268116]
@@ -2575,3 +2579,15 @@ position = Vector2(660, 374)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D4" unique_id=440885230]
 position = Vector2(-10, -190)
 shape = SubResource("RectangleShape2D_igif3")
+
+[node name="interactables" type="Node2D" parent="." unique_id=1328835388]
+
+[node name="coffee_machine" type="Area2D" parent="interactables" unique_id=1806363067]
+position = Vector2(119, 9)
+script = ExtResource("9_b0k3n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactables/coffee_machine" unique_id=497841003]
+shape = SubResource("CircleShape2D_nfrx5")
+
+[connection signal="area_entered" from="interactables/coffee_machine" to="interactables/coffee_machine" method="area_entered"]
+[connection signal="area_exited" from="interactables/coffee_machine" to="interactables/coffee_machine" method="area_exited"]

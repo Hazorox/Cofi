@@ -16,11 +16,17 @@ run/main_scene="uid://c1nh7tftw0nmf"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="uid://bqy0kfy0jf65e"
 
+[autoload]
+
+Globals="*uid://7t8c4ex6iwsl"
+
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
+window/size/viewport_width=640
+window/size/viewport_height=360
 window/size/resizable=false
+window/size/window_width_override=1280
+window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
@@ -36,6 +42,10 @@ folder_colors={
 "res://scenes/": "blue",
 "res://scripts/": "purple"
 }
+
+[global_group]
+
+player=""
 
 [input]
 
