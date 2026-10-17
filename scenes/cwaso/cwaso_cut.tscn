@@ -3,6 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://d1aloejfo7giw" path="res://assets/kitchen assets/kitchen assets/Cabinet/Countertop.png" id="1_d2xl0"]
 [ext_resource type="Script" uid="uid://dxvywq22tw8j2" path="res://scenes/cwaso/cwaso_cut.gd" id="1_rq64b"]
 [ext_resource type="Texture2D" uid="uid://b7knf3bjxac5j" path="res://assets/cwaso2.png" id="2_rq64b"]
+[ext_resource type="FontFile" uid="uid://btuf4ktdj5d5w" path="res://assets/fonts/Matcha Mint.ttf" id="4_bpykn"]
+[ext_resource type="Texture2D" uid="uid://il6iay23l2n7" path="res://assets/raw_cwaso.png" id="5_sywkn"]
+[ext_resource type="FontFile" uid="uid://csgeppgcgk2mc" path="res://assets/fonts/Cozy Autumns.otf" id="6_5h3ra"]
+[ext_resource type="Texture2D" uid="uid://dryhpfwb1ajqe" path="res://assets/cwaso.png" id="6_r01pn"]
+[ext_resource type="AudioStream" uid="uid://xtndkglfm377" path="res://assets/SFX/the-cookies-are-now-prepared.mp3" id="8_lqfbo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bpykn"]
 atlas = ExtResource("2_rq64b")
@@ -68,6 +73,32 @@ size = Vector2(31, 551)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_51o8a"]
 size = Vector2(42.916565, 580.84924)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7wsd"]
+bg_color = Color(0.08592605, 0.6996782, 0.5631541, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.01172034, 0.36025563, 0.34016466, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sywkn"]
+bg_color = Color(0.885433, 0.2939272, 0.11590617, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.9518077, 0.14593828, 0.19107234, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="CwasoCut" type="Node2D" unique_id=515972311]
 script = ExtResource("1_rq64b")
@@ -366,3 +397,91 @@ color = Color(0.45490196, 0.45490196, 0.45490196, 1)
 position = Vector2(881.7937, 363.29227)
 rotation = 0.33427036
 shape = SubResource("RectangleShape2D_51o8a")
+
+[node name="roll" type="Button" parent="." unique_id=740513027]
+offset_left = 477.0
+offset_top = 9.0
+offset_right = 732.0
+offset_bottom = 92.0
+theme_override_fonts/font = ExtResource("4_bpykn")
+theme_override_font_sizes/font_size = 41
+theme_override_styles/normal = SubResource("StyleBoxFlat_s7wsd")
+text = "Roll Them"
+
+[node name="cwasos" type="Node2D" parent="." unique_id=1527456772]
+
+[node name="Cwaso" type="Sprite2D" parent="cwasos" unique_id=537908316]
+position = Vector2(308.00003, 579)
+scale = Vector2(10.375, 10.375)
+texture = ExtResource("5_sywkn")
+
+[node name="Cwaso2" type="Sprite2D" parent="cwasos" unique_id=1046510790]
+position = Vector2(404.00003, 166.00009)
+scale = Vector2(10.375, 10.375)
+texture = ExtResource("5_sywkn")
+
+[node name="Cwaso3" type="Sprite2D" parent="cwasos" unique_id=594734333]
+position = Vector2(591, 177.00009)
+scale = Vector2(10.375, 10.375)
+texture = ExtResource("5_sywkn")
+
+[node name="Cwaso4" type="Sprite2D" parent="cwasos" unique_id=639693093]
+position = Vector2(651, 575.00006)
+scale = Vector2(10.375, 10.375)
+texture = ExtResource("5_sywkn")
+
+[node name="Cwaso5" type="Sprite2D" parent="cwasos" unique_id=1300494036]
+position = Vector2(842, 167.00009)
+scale = Vector2(10.375, 10.375)
+texture = ExtResource("5_sywkn")
+
+[node name="Cwaso6" type="Sprite2D" parent="cwasos" unique_id=17780558]
+position = Vector2(911, 549.00006)
+scale = Vector2(10.375, 10.375)
+texture = ExtResource("5_sywkn")
+
+[node name="oven" type="Button" parent="." unique_id=2069695919]
+offset_left = 374.0
+offset_top = 315.0
+offset_right = 855.0
+offset_bottom = 398.0
+theme_override_fonts/font = ExtResource("6_5h3ra")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_sywkn")
+text = "Cinnamon Oven"
+
+[node name="cooked_cwasos" type="Node2D" parent="." unique_id=1371156557]
+
+[node name="Cwaso7" type="Sprite2D" parent="cooked_cwasos" unique_id=2029401378]
+position = Vector2(310, 578.00006)
+scale = Vector2(15, 15)
+texture = ExtResource("6_r01pn")
+
+[node name="Cwaso8" type="Sprite2D" parent="cooked_cwasos" unique_id=780078761]
+position = Vector2(379.00003, 171)
+scale = Vector2(15, 15)
+texture = ExtResource("6_r01pn")
+
+[node name="Cwaso9" type="Sprite2D" parent="cooked_cwasos" unique_id=1007238324]
+position = Vector2(644, 576.00006)
+scale = Vector2(15, 15)
+texture = ExtResource("6_r01pn")
+
+[node name="Cwaso10" type="Sprite2D" parent="cooked_cwasos" unique_id=577505117]
+position = Vector2(591, 174.00002)
+scale = Vector2(15, 15)
+texture = ExtResource("6_r01pn")
+
+[node name="Cwaso11" type="Sprite2D" parent="cooked_cwasos" unique_id=283801133]
+position = Vector2(831, 172.00006)
+scale = Vector2(15, 15)
+texture = ExtResource("6_r01pn")
+
+[node name="Cwaso12" type="Sprite2D" parent="cooked_cwasos" unique_id=1078650250]
+position = Vector2(908, 557.00006)
+scale = Vector2(15, 15)
+texture = ExtResource("6_r01pn")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1446673178]
+stream = ExtResource("8_lqfbo")
+volume_db = 24.0
