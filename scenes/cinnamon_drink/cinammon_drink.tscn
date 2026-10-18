@@ -101,7 +101,7 @@ position = Vector2(312, 304)
 scale = Vector2(4, 4)
 
 [node name="TimerToRestart" type="Timer" parent="." unique_id=404864791]
-wait_time = 15.0
+wait_time = 17.5
 autostart = true
 
 [node name="Label" type="Label" parent="." unique_id=1497212366]

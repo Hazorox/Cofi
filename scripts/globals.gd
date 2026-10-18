@@ -12,4 +12,5 @@ var cinnamon_drink_milk := 0
 var cinnamon_drink_sugar_cubes := 0
 var cinnamon_drink_cinammon_sticks := 0
 var blending_progress := 0
+var player_has_cinnamon_drink := false
 var target = "coffee"
