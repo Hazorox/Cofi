@@ -34,6 +34,7 @@ func _process(_delta: float) -> void:
 func _on_timer_to_restart_timeout() -> void:
 	var all_collected = Globals.cinnamon_drink_apple_slices == 4 and Globals.cinnamon_drink_cinammon_sticks == 1 and Globals.cinnamon_drink_milk == 2 and Globals.cinnamon_drink_sugar_cubes == 4
 	if all_collected:
+		Globals.profit+=40
 		switch_to(cinnamon_mini_game)
 
 func switch_to(target_scene: Node) -> void:

@@ -67,6 +67,7 @@ func cut4_clicked(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 			apple.pause()
 			Globals.apple_pie_slices += 4
 			print("cut4_clicked finished, switching scene")
+			Globals.profit+=10
 			switch_to(apple_pie_game_scene)
 
 func switch_to(next_scene: Node) -> void:

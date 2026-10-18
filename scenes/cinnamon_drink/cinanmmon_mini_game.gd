@@ -14,6 +14,7 @@ func _process(_delta: float) -> void:
 	if Globals.blending_progress >= 100 and not has_switched:
 		Globals.player_has_cinnamon_drink = true
 		has_switched = true
+		Globals.profit+=10
 		switch_to(cofi_scene)
 
 func _on_blenders_spawning_timer_timeout() -> void:

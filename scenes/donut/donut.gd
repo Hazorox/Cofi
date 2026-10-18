@@ -47,6 +47,7 @@ func glazen():
 	await audio.finished
 	donut.frame = 3
 	await get_tree().create_timer(1.5).timeout
+	Globals.profit+=10
 	switch_to(cofi_scene)
 
 func switch_to(target_scene: Node) -> void:

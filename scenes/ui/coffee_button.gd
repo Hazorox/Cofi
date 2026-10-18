@@ -13,8 +13,5 @@ func switch_to(next:Node)->void:
 	recipes_scene.process_mode = Node.PROCESS_MODE_DISABLED
 	recipes_scene.visible = false
 	
-	machine_scene.process_mode = Node.PROCESS_MODE_INHERIT
-	machine_scene.visible = true
-	
 	next.process_mode = Node.PROCESS_MODE_INHERIT
 	next.visible = true

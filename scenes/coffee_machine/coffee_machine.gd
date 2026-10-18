@@ -13,8 +13,11 @@ func _ready():
 	game.finished.connect(on_finished)
 
 func start_game(type:String):
+	visible=true
 	for canvas in canvases:
-		canvas.layer = 40
+		canvas.layer = 60
+		canvas.visible=true
+		
 	pregame.queue_free()
 	game.coffee_type = type
 	game.visible = true

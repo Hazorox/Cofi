@@ -98,6 +98,7 @@ func cinnamon_oven():
 	await audio.finished
 	cooked.show()
 	await get_tree().create_timer(1.0).timeout
+	Globals.profit+=10
 	switch_to(cofi_scene)
 
 func switch_to(target_scene: Node) -> void:

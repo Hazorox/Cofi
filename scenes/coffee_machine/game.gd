@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 		"latte":
 			speed = 200
 			hits_to_goal = 2
-		"chocolate":
+		"choco":
 			speed=260
 			hits_to_goal = 4
 		"espresso":

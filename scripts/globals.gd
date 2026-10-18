@@ -16,3 +16,14 @@ var player_has_cinnamon_drink := false
 var target = "coffee"
 var time := 12
 var profit := 0
+func _ready():
+	# Got some help from claude for this interval logic
+	var timer := Timer.new()
+	timer.wait_time = 20.0
+	timer.one_shot = false
+	timer.autostart = true
+	timer.timeout.connect(_on_timer_timeout)
+	add_child(timer)
+
+func _on_timer_timeout():
+	time+=1
