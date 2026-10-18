@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://yjwmewwo13t0" path="res://assets/sticky_notes.png" id="4_f35ns"]
 [ext_resource type="FontFile" uid="uid://cd0xo6gbmgcqp" path="res://assets/fonts/Anak Orang.ttf" id="5_12a3k"]
 [ext_resource type="AudioStream" uid="uid://dl2dgmia7k8pc" path="res://assets/audio/coffe_brew.mp3" id="9_2x5f6"]
+[ext_resource type="Script" uid="uid://2ydo0epw3ncv" path="res://scenes/coffee_machine/result.gd" id="10_muujr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nfrx5"]
 bg_color = Color(0.45612794, 0.71846986, 0, 1)
@@ -57,6 +58,7 @@ radius = 21.023796
 script = ExtResource("1_t78eo")
 
 [node name="bg" type="CanvasLayer" parent="." unique_id=928508977]
+layer = -50
 
 [node name="bg" type="TextureRect" parent="bg" unique_id=2108513250]
 anchors_preset = 15
@@ -68,6 +70,7 @@ texture = ExtResource("1_5iaqh")
 expand_mode = 1
 
 [node name="game" type="CanvasLayer" parent="." unique_id=24811779]
+layer = -50
 visible = false
 script = ExtResource("3_54hl4")
 
@@ -109,6 +112,7 @@ position = Vector2(-3, 80)
 shape = SubResource("CircleShape2D_0hvcy")
 
 [node name="pregame" type="CanvasLayer" parent="." unique_id=985958996]
+layer = -50
 script = ExtResource("3_v8h8f")
 
 [node name="notes" type="TextureRect" parent="pregame" unique_id=546472934]
@@ -182,6 +186,13 @@ text = "Espresso 💋 (HARD)"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2110438923]
 stream = ExtResource("9_2x5f6")
 parameters/looping = true
+
+[node name="result" type="CanvasLayer" parent="." unique_id=1318744399]
+script = ExtResource("10_muujr")
+
+[node name="Label" type="Label" parent="result" unique_id=57510373]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [connection signal="pressed" from="pregame/buttons/latte" to="pregame" method="_on_latte_pressed"]
 [connection signal="pressed" from="pregame/buttons/chocolate" to="pregame" method="_on_chocolate_pressed"]

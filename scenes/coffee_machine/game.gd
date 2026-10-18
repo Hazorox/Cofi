@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-signal finished(hits,mistakes,hits_on_goal)
+signal finished(hits,hits_on_goal)
 
 @export var coffee_type = ""
 @export var speed = 120 # amount of degrees per sec
@@ -14,7 +14,6 @@ var valid = false # On green spot
 var hits := 0
 var hits_to_goal :=0
 var hits_on_goal := 0
-var mistakes :=0
 func _ready() -> void:
 	# Make valid when both overlap
 	green.area_entered.connect(green_entered)
@@ -50,13 +49,12 @@ func _process(delta: float) -> void:
 			green_panel.position = green_collision.position - green_panel.size / 2
 			hits+=1
 			hits_on_goal+=1
-			if hits==hits_to_goal:
-				finished.emit(hits,mistakes,hits_on_goal)
+		else:
+			hits+=1
+		if hits==hits_to_goal:
+				finished.emit(hits,hits_on_goal)
 				visible = false
 				process_mode = Node.PROCESS_MODE_DISABLED
-		else:
-			mistakes += 1
-			hits+=1
 # Control Valid
 func green_entered(Area:Area2D)->void:
 	valid = true

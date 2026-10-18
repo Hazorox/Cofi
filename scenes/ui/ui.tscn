@@ -44,6 +44,7 @@ grow_vertical = 2
 script = ExtResource("1_7vp6q")
 
 [node name="pause" type="CanvasLayer" parent="." unique_id=1724200059]
+layer = 100
 visible = false
 script = ExtResource("1_pfayw")
 

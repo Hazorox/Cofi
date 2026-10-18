@@ -2,9 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://ceqebv6qgs3a7" path="res://scenes/ui/ui.tscn" id="1_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://u5sgl22x1tm5" path="res://scenes/cofi/cofi.tscn" id="1_7h61r"]
+[ext_resource type="PackedScene" uid="uid://bq8uh0k25iuf8" path="res://scenes/coffee_machine/coffee_machine.tscn" id="1_kelw5"]
+[ext_resource type="Script" uid="uid://bq5xslp64jne2" path="res://scenes/game/game.gd" id="1_lfrn8"]
 [ext_resource type="PackedScene" uid="uid://s6sx8sv3cjg8" path="res://scenes/player/player.tscn" id="2_0sr1o"]
 
 [node name="Game" type="Node2D" unique_id=1664967722]
+script = ExtResource("1_lfrn8")
+
+[node name="CoffeeMachine" parent="." unique_id=971991754 instance=ExtResource("1_kelw5")]
+process_mode = 4
+visible = false
 
 [node name="Ui" parent="." unique_id=1048639939 instance=ExtResource("1_0sr1o")]
 
