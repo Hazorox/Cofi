@@ -1,24 +1,24 @@
 [gd_scene format=3 uid="uid://b7ebjrkxvhcu3"]
 
-[ext_resource type="Script" uid="uid://c52rwa3pxiw5d" path="res://scenes/apple_pie/apple_cut.gd" id="1_rp46x"]
-[ext_resource type="Texture2D" uid="uid://d1aloejfo7giw" path="res://assets/kitchen assets/kitchen assets/Cabinet/Countertop.png" id="2_vw5vg"]
-[ext_resource type="Texture2D" uid="uid://dmyj4amb1p3e8" path="res://assets/vii assets/apple.png" id="3_4y1yn"]
-[ext_resource type="Texture2D" uid="uid://cryxdy22pc5aa" path="res://assets/vii assets/apple_slices.png" id="4_rp46x"]
+[ext_resource type="Script" uid="uid://c52rwa3pxiw5d" path="res://scenes/apple_pie/apple_cut.gd" id="1_2cjh6"]
+[ext_resource type="Texture2D" uid="uid://d1aloejfo7giw" path="res://assets/kitchen assets/kitchen assets/Cabinet/Countertop.png" id="2_v6gpv"]
+[ext_resource type="Texture2D" uid="uid://dmyj4amb1p3e8" path="res://assets/vii assets/apple.png" id="3_oapf7"]
+[ext_resource type="Texture2D" uid="uid://cryxdy22pc5aa" path="res://assets/vii assets/apple_slices.png" id="4_mjoi1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rp46x"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_4y1yn")
+"texture": ExtResource("3_oapf7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_4y1yn")
+"texture": ExtResource("3_oapf7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_4y1yn")
+"texture": ExtResource("3_oapf7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_4y1yn")
+"texture": ExtResource("3_oapf7")
 }],
 "loop": 1,
 "name": &"cut",
@@ -29,7 +29,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_rp46x")
+"texture": ExtResource("4_mjoi1")
 }],
 "loop": 1,
 "name": &"slices",
@@ -50,14 +50,14 @@ size = Vector2(31, 551)
 
 [node name="AppleCut" type="Node2D" unique_id=515972311]
 scale = Vector2(0.5, 0.5)
-script = ExtResource("1_rp46x")
+script = ExtResource("1_2cjh6")
 
 [node name="map" type="Node2D" parent="." unique_id=1807791916]
 
 [node name="Countertop" type="Sprite2D" parent="map" unique_id=1951840272]
 position = Vector2(647, 357)
 scale = Vector2(92.42857, 59.285717)
-texture = ExtResource("2_vw5vg")
+texture = ExtResource("2_v6gpv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1764528362]
 position = Vector2(557.5, 309)
