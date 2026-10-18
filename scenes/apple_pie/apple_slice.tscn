@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://b7a2hhj1t5eic" path="res://scenes/apple_pie/apple_slice.gd" id="1_nuful"]
 
 [node name="AppleSlice" type="Node2D" unique_id=391412173]
+scale = Vector2(1.25, 1.25)
 script = ExtResource("1_nuful")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=569287843]

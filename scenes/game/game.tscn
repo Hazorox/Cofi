@@ -2,9 +2,21 @@
 
 [ext_resource type="PackedScene" uid="uid://ceqebv6qgs3a7" path="res://scenes/ui/ui.tscn" id="1_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://u5sgl22x1tm5" path="res://scenes/cofi/cofi.tscn" id="1_7h61r"]
+[ext_resource type="PackedScene" uid="uid://bq8uh0k25iuf8" path="res://scenes/coffee_machine/coffee_machine.tscn" id="1_kelw5"]
+[ext_resource type="Script" uid="uid://bq5xslp64jne2" path="res://scenes/game/game.gd" id="1_lfrn8"]
 [ext_resource type="PackedScene" uid="uid://s6sx8sv3cjg8" path="res://scenes/player/player.tscn" id="2_0sr1o"]
+[ext_resource type="PackedScene" uid="uid://bhyombmkdlxiq" path="res://scenes/ui/recipes.tscn" id="4_kelw5"]
+[ext_resource type="PackedScene" uid="uid://b7ebjrkxvhcu3" path="res://scenes/apple_pie/apple_cut.tscn" id="5_5i0tg"]
+[ext_resource type="PackedScene" uid="uid://but6kw6kkg8tx" path="res://scenes/apple_pie/apple_pie_game.tscn" id="6_bdhmt"]
+[ext_resource type="PackedScene" uid="uid://bxrl24rablf06" path="res://scenes/cinnamon_drink/cinammon_drink.tscn" id="7_87uf6"]
+[ext_resource type="PackedScene" uid="uid://ch8suwwq1lwb1" path="res://scenes/cinnamon_drink/cinanmmon_mini_game.tscn" id="8_2a8rs"]
 
 [node name="Game" type="Node2D" unique_id=1664967722]
+script = ExtResource("1_lfrn8")
+
+[node name="CoffeeMachine" parent="." unique_id=971991754 instance=ExtResource("1_kelw5")]
+process_mode = 4
+visible = false
 
 [node name="Ui" parent="." unique_id=1048639939 instance=ExtResource("1_0sr1o")]
 
@@ -15,3 +27,40 @@ position = Vector2(83, 327)
 
 [node name="audio" type="AudioStreamPlayer2D" parent="Cofi" unique_id=1772376848]
 position = Vector2(83, 327)
+
+[node name="Recipes" parent="." unique_id=1960948837 instance=ExtResource("4_kelw5")]
+visible = false
+
+[node name="TextureRect" parent="Recipes" index="0" unique_id=1716992165]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 640.0
+offset_bottom = 720.0
+
+[node name="Label" parent="Recipes" index="1" unique_id=1507447880]
+offset_left = 230.0
+offset_right = 399.0
+offset_bottom = 83.0
+
+[node name="ApplePie" type="Node2D" parent="." unique_id=57091508]
+
+[node name="AppleCut" parent="ApplePie" unique_id=515972311 instance=ExtResource("5_5i0tg")]
+visible = false
+
+[node name="ApplePieGame" parent="ApplePie" unique_id=436092686 instance=ExtResource("6_bdhmt")]
+visible = false
+
+[node name="Camera2D" parent="ApplePie/ApplePieGame" index="2" unique_id=1534186520]
+enabled = false
+
+[node name="CinnamonDrink" type="Node2D" parent="." unique_id=349887056]
+
+[node name="CinammonDrinkGame" parent="CinnamonDrink" unique_id=926383218 instance=ExtResource("7_87uf6")]
+visible = false
+
+[node name="CinanmmonMiniGame" parent="CinnamonDrink" unique_id=1747440126 instance=ExtResource("8_2a8rs")]
+visible = false
+
+[editable path="Recipes"]
+[editable path="ApplePie/ApplePieGame"]
+[editable path="ApplePie/ApplePieGame/ApplePieCookingBar"]

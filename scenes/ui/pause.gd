@@ -39,6 +39,7 @@ func _on_continue_pressed() -> void:
 
 func _on_fullscreen_pressed() -> void:
 	# Toggle fullscreen
+	fullscreen = not fullscreen
 	if fullscreen:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
