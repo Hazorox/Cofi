@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://b2nuykbdi5yru" path="res://assets/fonts/Daydream DEMO.otf" id="3_g5kmx"]
 [ext_resource type="FontFile" uid="uid://bcwih108w6w07" path="res://assets/fonts/Pixelitta-Regular.ttf" id="5_7vp6q"]
 [ext_resource type="FontFile" uid="uid://begabvq08yhes" path="res://assets/fonts/MEMENU.otf" id="6_jcn1r"]
+[ext_resource type="Script" uid="uid://cjyt4gl6p5yx" path="res://scenes/ui/money.gd" id="8_4kltc"]
 [ext_resource type="Texture2D" uid="uid://dtr7kjkjve3fd" path="res://assets/dollar.png" id="8_y220t"]
 [ext_resource type="Script" uid="uid://b5qpeawckwywu" path="res://scenes/ui/time.gd" id="9_4kltc"]
 [ext_resource type="Texture2D" uid="uid://bgu7mg5hhg4ta" path="res://assets/clock.png" id="10_hl07w"]
@@ -164,6 +165,7 @@ layer = 49
 offset_right = 40.0
 offset_bottom = 40.0
 dragging_enabled = false
+script = ExtResource("8_4kltc")
 
 [node name="TextureRect" type="TextureRect" parent="hud/money" unique_id=1344469647]
 layout_mode = 2
