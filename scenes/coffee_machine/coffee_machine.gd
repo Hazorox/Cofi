@@ -36,15 +36,12 @@ func on_finished(hits,hits_on_goal)->void:
 	else:
 		grade = "C"
 	result.grade = grade
-	print("finished")
 	await get_tree().create_timer(4).timeout
 	visible=false
-	print("entire thing hidden")
 	for canvas in canvases:
 		if is_instance_valid(canvas):
 			canvas.layer = -30
 			canvas.visible = false
-	print("canvas hidden")
+	Globals.profit+=10
 	finished.emit()
-	print("finished emitted")
 	process_mode=Node.PROCESS_MODE_DISABLED

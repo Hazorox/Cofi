@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://csswm5r1mj4i4" path="res://assets/cafe_assets/Top-Down_Retro_Interior/TopDownHouse_FurnitureState2.png" id="7_hl3hr"]
 [ext_resource type="Texture2D" uid="uid://f8yo2i8aqp71" path="res://assets/cafe_assets/PPFurniturePackV1-FreeVer/PPFurniture Pack-FreeV.png" id="8_1hfj8"]
 [ext_resource type="Script" uid="uid://jofbav505pvi" path="res://scenes/cofi/coffee_machine.gd" id="9_b0k3n"]
+[ext_resource type="PackedScene" uid="uid://be6smeu06d7kq" path="res://scenes/npc/npc.tscn" id="10_hl3hr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8fvwg"]
 texture = ExtResource("1_8jcu0")
@@ -2588,6 +2589,18 @@ script = ExtResource("9_b0k3n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactables/coffee_machine" unique_id=497841003]
 shape = SubResource("CircleShape2D_nfrx5")
+
+[node name="Npc" parent="." unique_id=990076453 instance=ExtResource("10_hl3hr")]
+position = Vector2(359, 271)
+
+[node name="Npc2" parent="." unique_id=2013004959 instance=ExtResource("10_hl3hr")]
+position = Vector2(200, 190)
+
+[node name="Npc3" parent="." unique_id=944157519 instance=ExtResource("10_hl3hr")]
+position = Vector2(440, 110)
+
+[node name="Npc4" parent="." unique_id=2132686097 instance=ExtResource("10_hl3hr")]
+position = Vector2(550, 235)
 
 [connection signal="area_entered" from="interactables/coffee_machine" to="interactables/coffee_machine" method="area_entered"]
 [connection signal="area_exited" from="interactables/coffee_machine" to="interactables/coffee_machine" method="area_exited"]

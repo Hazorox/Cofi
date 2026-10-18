@@ -35,8 +35,6 @@ func _on_timer_to_restart_timeout() -> void:
 	var all_collected = Globals.cinnamon_drink_apple_slices == 4 and Globals.cinnamon_drink_cinammon_sticks == 1 and Globals.cinnamon_drink_milk == 2 and Globals.cinnamon_drink_sugar_cubes == 4
 	if all_collected:
 		switch_to(cinnamon_mini_game)
-	else:
-		get_tree().reload_current_scene()
 
 func switch_to(target_scene: Node) -> void:
 	process_mode = Node.PROCESS_MODE_DISABLED
