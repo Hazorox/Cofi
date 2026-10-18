@@ -23,13 +23,13 @@ func _process(delta: float) -> void:
 	# Change speed and hits to win
 	match coffee_type:
 		"latte":
-			speed = 200
+			speed = 260
 			hits_to_goal = 2
 		"choco":
-			speed=260
+			speed=300
 			hits_to_goal = 4
 		"espresso":
-			speed=300
+			speed=360
 			hits_to_goal=6
 	
 	# Rotate the bean around the centre of Area2D
@@ -60,3 +60,14 @@ func green_entered(Area:Area2D)->void:
 	valid = true
 func green_exited(Area:Area2D):
 	valid = false
+
+func reset():
+	hits = 0
+	hits_on_goal = 0
+	valid = false
+	green.rotation_degrees=0
+	bean.rotation_degrees = 0
+	green_collision.shape.radius = 20
+	bean_collision.shape.radius = 21.02
+	green_panel.size = Vector2i(40,40)
+	green_panel.position = Vector2i(32,-69)

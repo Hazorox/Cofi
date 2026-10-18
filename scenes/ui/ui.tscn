@@ -162,10 +162,10 @@ vertical_alignment = 1
 layer = 49
 
 [node name="money" type="HSplitContainer" parent="hud" unique_id=1946730723]
-offset_left = 563.0
-offset_top = 315.00003
-offset_right = 672.0
-offset_bottom = 379.00003
+offset_left = 548.0
+offset_top = 315.0
+offset_right = 657.0
+offset_bottom = 379.0
 scale = Vector2(0.7, 0.7)
 dragging_enabled = false
 script = ExtResource("8_4kltc")

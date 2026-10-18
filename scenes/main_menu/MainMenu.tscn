@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://dqeyav1db84t6" path="res://assets/fonts/upheavtt.ttf" id="4_wckin"]
 [ext_resource type="Texture2D" uid="uid://ywaml4u1bu30" path="res://assets/sign_pressed.png" id="5_qq55g"]
 [ext_resource type="Texture2D" uid="uid://c086vs5mjh18d" path="res://assets/sign_hover.png" id="6_pkvjm"]
+[ext_resource type="Texture2D" uid="uid://c1fyj0dyom8om" path="res://assets/vii assets/cinnamon_rolls.png" id="8_arvcj"]
 
 [sub_resource type="GDScript" id="GDScript_oitky"]
 script/source = "extends CanvasLayer
@@ -76,10 +77,10 @@ expand_mode = 1
 metadata/_edit_lock_ = true
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=386534486]
-offset_left = 359.0
-offset_top = 44.0
-offset_right = 651.0
-offset_bottom = 354.0
+offset_left = 383.0
+offset_top = 38.0
+offset_right = 675.0
+offset_bottom = 348.0
 texture = ExtResource("2_wckin")
 
 [node name="title" type="Label" parent="." unique_id=1424001399]
@@ -131,3 +132,11 @@ text = "OPEN"
 label_settings = SubResource("LabelSettings_nfrx5")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1546140984]
+offset_left = 341.0
+offset_top = 217.0
+offset_right = 405.0
+offset_bottom = 281.0
+scale = Vector2(2, 2)
+texture = ExtResource("8_arvcj")
