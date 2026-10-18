@@ -23,13 +23,13 @@ func _process(delta: float) -> void:
 	# Change speed and hits to win
 	match coffee_type:
 		"latte":
-			speed = 120
+			speed = 200
 			hits_to_goal = 2
 		"chocolate":
-			speed=180
+			speed=260
 			hits_to_goal = 4
 		"espresso":
-			speed=240
+			speed=300
 			hits_to_goal=6
 	
 	# Rotate the bean around the centre of Area2D
