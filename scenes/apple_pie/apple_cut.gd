@@ -8,8 +8,11 @@ extends Node2D
 @onready var iscut2: Area2D = $cut2/Area2D
 @onready var iscut3: Area2D = $cut3/Area2D
 @onready var iscut4: Area2D = $cut4/Area2D
-@onready var dough: AnimatedSprite2D =$AnimatedSprite2D
+@onready var dough: AnimatedSprite2D = $AnimatedSprite2D
 @onready var apple: AnimatedSprite2D = $AnimatedSprite2D2
+
+@onready var apple_pie_game_scene = get_parent().get_node("ApplePieGame")  # sibling under ApplePie
+@onready var camera: Camera2D = apple_pie_game_scene.get_node("Camera2D")
 
 func _ready() -> void:
 	dough.stop()
@@ -63,12 +66,12 @@ func cut4_clicked(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 			await get_tree().create_timer(1.0).timeout
 			apple.pause()
 			Globals.apple_pie_slices += 4
-			get_tree().change_scene_to_file("res://scenes/cofi/cofi.tscn")
+			print("cut4_clicked finished, switching scene")
+			switch_to(apple_pie_game_scene)
 
-#func cut5_clicked(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	#if event is InputEventMouseButton and event.pressed:
-		#if event.button_index == MOUSE_BUTTON_LEFT:
-			#cut_5.hide()
-			#dough.play("cut")
-			#await get_tree().create_timer(1.0).timeout
-			#get_tree().change_scene_to_file("res://scenes/cofi/cofi.tscn")
+func switch_to(next_scene: Node) -> void:
+	print("switch_to called with: ", next_scene)
+	next_scene.process_mode = Node.PROCESS_MODE_INHERIT
+	next_scene.visible = true
+	camera.enabled = true
+	camera.make_current()
