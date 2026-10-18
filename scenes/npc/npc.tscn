@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://be6smeu06d7kq"]
+
+[ext_resource type="Texture2D" uid="uid://c1y85v8oowppv" path="res://assets/characters/sprite_split/character_9/Steve.png" id="1_sspvn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nfrx5"]
+
+[node name="Npc" type="Area2D" unique_id=206125884]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=111130387]
+shape = SubResource("CircleShape2D_nfrx5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=158512111]
+texture = ExtResource("1_sspvn")
