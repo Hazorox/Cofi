@@ -20,3 +20,6 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("apple_pie_pot"):
 		Globals.milk_in_apple_pot = true
 		queue_free()
+	elif area.is_in_group("blender"):
+		Globals.cinnamon_drink_milk += 1
+		queue_free()

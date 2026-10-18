@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bigvd4ossykug" path="res://assets/vii assets/cinnamon_stick.png" id="1_utf4e"]
 
 [node name="CinnamonSticks" type="Node2D" unique_id=1218499004]
+scale = Vector2(0.75, 0.75)
 script = ExtResource("1_f67ru")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1016999987]
