@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://hrwoy3tydt8i" path="res://assets/vii assets/cheesecake.png" id="6_5nrtq"]
 [ext_resource type="Texture2D" uid="uid://gggfa1qi6x8n" path="res://assets/vii assets/apple_pie.png" id="7_5nrtq"]
 [ext_resource type="Script" uid="uid://dsd01nxalpgmt" path="res://scenes/ui/cinnamon_drink_button.gd" id="7_qtole"]
+[ext_resource type="Texture2D" uid="uid://dryhpfwb1ajqe" path="res://assets/cwaso.png" id="8_6vgbs"]
 [ext_resource type="Script" uid="uid://cfimeihbmn0r8" path="res://scenes/ui/apple_pie_button.gd" id="9_qtole"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_onkbk"]
@@ -20,10 +21,6 @@ atlas = ExtResource("4_hvn05")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lc816"]
-atlas = ExtResource("5_63ew5")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8mrwc"]
 atlas = ExtResource("5_63ew5")
 region = Rect2(0, 0, 64, 64)
 
@@ -148,8 +145,9 @@ offset_left = 156.0
 offset_top = 196.0
 offset_right = 223.0
 offset_bottom = 257.0
-texture_normal = SubResource("AtlasTexture_8mrwc")
+texture_normal = ExtResource("8_6vgbs")
 ignore_texture_size = true
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="CroissantButton" unique_id=1341850768]
 layout_mode = 1
