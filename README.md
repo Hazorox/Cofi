@@ -63,4 +63,9 @@ cd cofi/ # Then open the folder with Godot 4.7
 - logic of spinning bean
 - help plan how to manage scenes overriding
 
+
+# FAQ
+<b> So When Do I Win ? </b>
+- You don't. Just work and vibe :D
+
 Made With <3 for Hackclub!!
