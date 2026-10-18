@@ -27,3 +27,5 @@ func _ready():
 
 func _on_timer_timeout():
 	time+=1
+	if time==24:
+		time=12
