@@ -36,7 +36,6 @@ func _on_timer_to_restart_timeout() -> void:
 	if all_collected:
 		switch_to(cinnamon_mini_game)
 
-
 func switch_to(target_scene: Node) -> void:
 	process_mode = Node.PROCESS_MODE_DISABLED
 	visible = false
