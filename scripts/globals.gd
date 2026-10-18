@@ -13,3 +13,5 @@ var cinnamon_drink_sugar_cubes := 0
 var cinnamon_drink_cinammon_sticks := 0
 var blending_progress := 0
 var target = "coffee"
+var time := 1
+var profit := 0
