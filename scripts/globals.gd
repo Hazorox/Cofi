@@ -11,4 +11,5 @@ var cinnamon_drink_apple_slices := 0
 var cinnamon_drink_milk := 0
 var cinnamon_drink_sugar_cubes := 0
 var cinnamon_drink_cinammon_sticks := 0
+var blending_progress := 0
 var target = "coffee"
