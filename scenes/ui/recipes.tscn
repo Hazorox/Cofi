@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://cd0xo6gbmgcqp" path="res://assets/fonts/Anak Orang.ttf" id="2_kkyj2"]
 [ext_resource type="Texture2D" uid="uid://d77n3ckahl1v" path="res://assets/vii assets/coffe.png" id="3_v8nwv"]
 [ext_resource type="Texture2D" uid="uid://c7qxxtlirolxq" path="res://assets/vii assets/donut.png" id="4_hvn05"]
+[ext_resource type="Script" uid="uid://233m6r01c2d3" path="res://scenes/ui/coffee_button.gd" id="5_6vgbs"]
 [ext_resource type="Texture2D" uid="uid://c6hhb5wfegvrt" path="res://assets/vii assets/cinnamon_drink.png" id="5_63ew5"]
 [ext_resource type="Texture2D" uid="uid://hrwoy3tydt8i" path="res://assets/vii assets/cheesecake.png" id="6_5nrtq"]
 [ext_resource type="Texture2D" uid="uid://gggfa1qi6x8n" path="res://assets/vii assets/apple_pie.png" id="7_5nrtq"]
@@ -14,6 +15,10 @@
 [sub_resource type="AtlasTexture" id="AtlasTexture_onkbk"]
 atlas = ExtResource("3_v8nwv")
 region = Rect2(8, 16, 56, 48)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4kltc"]
+font = ExtResource("2_kkyj2")
+font_color = Color(0.9049196, 0.44514352, 0.28523108, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_63ew5"]
 atlas = ExtResource("4_hvn05")
@@ -74,6 +79,7 @@ offset_right = 220.0
 offset_bottom = 166.0
 texture_normal = SubResource("AtlasTexture_onkbk")
 ignore_texture_size = true
+script = ExtResource("5_6vgbs")
 
 [node name="Label" type="Label" parent="CoffeeButton" unique_id=493578379]
 layout_mode = 1
@@ -90,6 +96,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 text = "Coffee"
+label_settings = SubResource("LabelSettings_4kltc")
 
 [node name="DonutButton" type="TextureButton" parent="." unique_id=1020255601]
 layout_mode = 0
@@ -115,6 +122,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 text = "Donut"
+label_settings = SubResource("LabelSettings_4kltc")
 
 [node name="CinnamonDrinkButton" type="TextureButton" parent="." unique_id=874011065]
 layout_mode = 0
@@ -141,6 +149,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 text = "Cinnamon"
+label_settings = SubResource("LabelSettings_4kltc")
 
 [node name="CroissantButton" type="TextureButton" parent="." unique_id=2059193078]
 layout_mode = 0
@@ -166,6 +175,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 text = "Croissant"
+label_settings = SubResource("LabelSettings_4kltc")
 
 [node name="CheeseCakeButton" type="TextureButton" parent="." unique_id=10534369]
 layout_mode = 0
@@ -191,6 +201,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 text = "CheeseCake"
+label_settings = SubResource("LabelSettings_4kltc")
 
 [node name="ApplePieButton" type="TextureButton" parent="." unique_id=1246548392]
 layout_mode = 0
@@ -217,3 +228,4 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 text = "ApplePie"
+label_settings = SubResource("LabelSettings_4kltc")
