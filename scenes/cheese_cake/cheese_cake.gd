@@ -5,6 +5,8 @@ extends Node2D
 @onready var cheese: Button = $cheese
 @onready var strawberry: Button = $strawberry
 @onready var audio: AudioStreamPlayer = $AudioStreamPlayer
+@onready var game_scene = get_parent().get_parent()
+@onready var cofi_scene = game_scene.get_node("Cofi")
 func _ready() -> void:
 	cake.show()
 	cake.stop()
@@ -41,4 +43,10 @@ func jam():
 	await audio.finished
 	cake.frame = 3
 	await get_tree().create_timer(1.5).timeout
-	get_tree().change_scene_to_file("res://scenes/game/game.tscn")
+	switch_to(cofi_scene)
+
+func switch_to(target_scene: Node) -> void:
+	process_mode = Node.PROCESS_MODE_DISABLED
+	visible = false
+	target_scene.process_mode = Node.PROCESS_MODE_INHERIT
+	target_scene.visible = true

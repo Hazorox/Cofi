@@ -1,4 +1,5 @@
 extends Node2D
+
 @onready var cut_1: Node2D = $cut1
 @onready var cut_2: Node2D = $cut2
 @onready var cut_3: Node2D = $cut3
@@ -15,6 +16,9 @@ extends Node2D
 @onready var cooked: Node2D = $cooked_cwasos
 @onready var oven: Button = $oven
 @onready var audio: AudioStreamPlayer = $AudioStreamPlayer
+@onready var game_scene = get_parent().get_parent()
+@onready var cofi_scene = game_scene.get_node("Cofi")
+
 func _ready() -> void:
 	Input.set_custom_mouse_cursor(preload("res://assets/icons/icons/icon2.png"), Input.CURSOR_ARROW, Vector2(8,8))
 	dough.stop()
@@ -94,5 +98,10 @@ func cinnamon_oven():
 	await audio.finished
 	cooked.show()
 	await get_tree().create_timer(1.0).timeout
-	get_tree().change_scene_to_file("res://scenes/cofi/cofi.tscn")
-	
+	switch_to(cofi_scene)
+
+func switch_to(target_scene: Node) -> void:
+	process_mode = Node.PROCESS_MODE_DISABLED
+	visible = false
+	target_scene.process_mode = Node.PROCESS_MODE_INHERIT
+	target_scene.visible = true

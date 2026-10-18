@@ -10,6 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://but6kw6kkg8tx" path="res://scenes/apple_pie/apple_pie_game.tscn" id="6_bdhmt"]
 [ext_resource type="PackedScene" uid="uid://bxrl24rablf06" path="res://scenes/cinnamon_drink/cinammon_drink.tscn" id="7_87uf6"]
 [ext_resource type="PackedScene" uid="uid://ch8suwwq1lwb1" path="res://scenes/cinnamon_drink/cinanmmon_mini_game.tscn" id="8_2a8rs"]
+[ext_resource type="PackedScene" uid="uid://cncx2d5ifw3u3" path="res://scenes/cwaso/cwaso.tscn" id="11_5jirj"]
+[ext_resource type="PackedScene" uid="uid://dmcnvkyvvgus7" path="res://scenes/cwaso/cwaso_cut.tscn" id="12_vaxfo"]
+[ext_resource type="PackedScene" uid="uid://diyeude1jit1a" path="res://scenes/donut/donut.tscn" id="13_vaxfo"]
+[ext_resource type="PackedScene" uid="uid://b4hw06c2uspse" path="res://scenes/cheese_cake/cheese_cake.tscn" id="14_ftsea"]
 
 [node name="Game" type="Node2D" unique_id=1664967722]
 script = ExtResource("1_lfrn8")
@@ -18,8 +22,6 @@ script = ExtResource("1_lfrn8")
 process_mode = 4
 visible = false
 
-[node name="Ui" parent="." unique_id=1048639939 instance=ExtResource("1_0sr1o")]
-
 [node name="Cofi" parent="." unique_id=1432555401 instance=ExtResource("1_7h61r")]
 
 [node name="Player" parent="Cofi" unique_id=339564489 instance=ExtResource("2_0sr1o")]
@@ -27,6 +29,8 @@ position = Vector2(83, 327)
 
 [node name="audio" type="AudioStreamPlayer2D" parent="Cofi" unique_id=1772376848]
 position = Vector2(83, 327)
+
+[node name="Ui" parent="Cofi" unique_id=1048639939 instance=ExtResource("1_0sr1o")]
 
 [node name="Recipes" parent="." unique_id=1960948837 instance=ExtResource("4_kelw5")]
 visible = false
@@ -60,6 +64,25 @@ visible = false
 
 [node name="CinanmmonMiniGame" parent="CinnamonDrink" unique_id=1747440126 instance=ExtResource("8_2a8rs")]
 visible = false
+
+[node name="CwasoGame" type="Node2D" parent="." unique_id=776596603]
+
+[node name="cwaso" parent="CwasoGame" unique_id=915439066 instance=ExtResource("11_5jirj")]
+visible = false
+
+[node name="CwasoCut" parent="CwasoGame" unique_id=2139581620 instance=ExtResource("12_vaxfo")]
+visible = false
+scale = Vector2(1, 1)
+
+[node name="DonutGame" type="Node2D" parent="." unique_id=381852074]
+visible = false
+
+[node name="donut" parent="DonutGame" unique_id=1684177733 instance=ExtResource("13_vaxfo")]
+
+[node name="CheeseCakeGame" type="Node2D" parent="." unique_id=12575647]
+visible = false
+
+[node name="CheeseCake" parent="CheeseCakeGame" unique_id=1915193998 instance=ExtResource("14_ftsea")]
 
 [editable path="Recipes"]
 [editable path="ApplePie/ApplePieGame"]
