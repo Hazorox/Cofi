@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://sjb1k4e3ls16"]
+
+[ext_resource type="Texture2D" uid="uid://cltt1yul1ho78" path="res://assets/vii assets/sugar_cube.png" id="1_i35mm"]
+[ext_resource type="Script" uid="uid://dn5h7ionmbaff" path="res://scenes/cinnamon_drink/sugar_cube.gd" id="1_qgwa2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onkbk"]
+atlas = ExtResource("1_i35mm")
+region = Rect2(0, 0, 72, 64)
+
+[node name="SugarCube" type="Node2D" unique_id=1803237838]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_qgwa2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=426692746]
+texture = SubResource("AtlasTexture_onkbk")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2032332995]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Area2D" unique_id=928452563]
+polygon = PackedVector2Array(-30, -14, -27, -14, -27, -16, -22, -16, -22, -19, -17, -19, -17, -21, -12, -21, -12, -24, -7, -24, -7, -26, -3, -26, -3, -28, 2, -28, 2, -26, 7, -26, 7, -24, 12, -24, 12, -21, 17, -21, 17, -19, 22, -19, 22, -16, 27, -16, 27, -14, 30, -14, 30, 17, 27, 17, 27, 19, 22, 19, 22, 22, 17, 22, 17, 24, 12, 24, 12, 26, 7, 26, 7, 29, 2, 29, 2, 31, -3, 31, -3, 29, -7, 29, -7, 26, -12, 26, -12, 24, -17, 24, -17, 22, -22, 22, -22, 19, -27, 19, -27, 17, -30, 17)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

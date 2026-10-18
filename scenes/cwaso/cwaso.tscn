@@ -75,10 +75,11 @@ animations = [{
 }],
 "loop": 1,
 "name": &"folding",
-"speed": 1.0
+"speed": 3.0
 }]
 
 [node name="cwaso" type="Node2D" unique_id=915439066]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_j1nq8")
 
 [node name="map" type="Node2D" parent="." unique_id=1023607387]
@@ -88,13 +89,13 @@ tile_map_data = PackedByteArray("AAD/////AAAAAAEAAAD//wAAAAAAAAEAAAD//wEAAAAAAAE
 tile_set = SubResource("TileSet_s7wsd")
 
 [node name="Countertop" type="Sprite2D" parent="map" unique_id=679122930]
-position = Vector2(657, 557)
+position = Vector2(648, 326)
 scale = Vector2(97.28571, 26.857143)
 texture = ExtResource("2_j1nq8")
 
 [node name="dough" type="AnimatedSprite2D" parent="." unique_id=190440054]
-position = Vector2(628.00006, 185)
-scale = Vector2(19.625002, 19.625002)
+position = Vector2(306, 91)
+scale = Vector2(9.28125, 9.28125)
 sprite_frames = SubResource("SpriteFrames_s7wsd")
 animation = &"folding"
 autoplay = "folding"

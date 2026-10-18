@@ -10,55 +10,67 @@ extends Node2D
 @onready var iscut4: Area2D = $cut4/Area2D
 @onready var iscut5: Area2D = $cut5/Area2D
 @onready var dough: AnimatedSprite2D =$AnimatedSprite2D
+@onready var roll: Button = $roll
+@onready var cwasos: Node2D = $cwasos
+@onready var cooked: Node2D = $cooked_cwasos
+@onready var oven: Button = $oven
+@onready var audio: AudioStreamPlayer = $AudioStreamPlayer
 func _ready() -> void:
+	Input.set_custom_mouse_cursor(preload("res://assets/icons/icons/icon2.png"), Input.CURSOR_ARROW, Vector2(8,8))
 	dough.stop()
 	cut_1.show()
 	cut_2.hide()
 	cut_3.hide()
 	cut_4.hide()
 	cut_5.hide()
+	roll.hide()
+	cwasos.hide()
+	oven.hide()
+	cooked.hide()
 	iscut1.input_event.connect(cut1_clicked)
 	iscut2.input_event.connect(cut2_clicked)
 	iscut3.input_event.connect(cut3_clicked)
 	iscut4.input_event.connect(cut4_clicked)
 	iscut5.input_event.connect(cut5_clicked)
+	roll.pressed.connect(roll_cwaso)
+	oven.pressed.connect(cinnamon_oven)
 
 
 func cut1_clicked(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			cut_1.hide()
-			cut_2.show()
 			dough.play("cut")
 			await get_tree().create_timer(1.1).timeout
 			dough.pause()
+			cut_2.show()
 			
 func cut2_clicked(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			cut_2.hide()
-			cut_3.show()
 			dough.play("cut")
 			await get_tree().create_timer(1.0).timeout
 			dough.pause()
+			cut_3.show()
 
 func cut3_clicked(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			cut_3.hide()
-			cut_4.show()
 			dough.play("cut")
 			await get_tree().create_timer(1.0).timeout
 			dough.pause()
+			cut_4.show()
 			
 func cut4_clicked(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			cut_4.hide()
-			cut_5.show()
 			dough.play("cut")
 			await get_tree().create_timer(1.0).timeout
 			dough.pause()
+			cut_5.show()
 
 func cut5_clicked(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
@@ -66,4 +78,21 @@ func cut5_clicked(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 			cut_5.hide()
 			dough.play("cut")
 			await get_tree().create_timer(1.0).timeout
-			get_tree().change_scene_to_file("res://scenes/cofi/cofi.tscn")
+			dough.pause()
+			roll.show()
+			
+func roll_cwaso():
+	roll.hide()
+	dough.hide()
+	cwasos.show()
+	oven.show()
+	
+func cinnamon_oven():
+	audio.play()
+	cwasos.hide()
+	oven.hide()
+	await audio.finished
+	cooked.show()
+	await get_tree().create_timer(1.0).timeout
+	get_tree().change_scene_to_file("res://scenes/cofi/cofi.tscn")
+	

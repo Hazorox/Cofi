@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bu0q4bdwy1kkx"]
+
+[ext_resource type="Script" uid="uid://bjfqq2bg473vp" path="res://scenes/apple_pie/apple_pie_pot.gd" id="1_72ey7"]
+[ext_resource type="Texture2D" uid="uid://dfrjmkg55at5m" path="res://assets/vii assets/apple_pie_pot.png" id="1_hry4s"]
+
+[node name="ApplePiePot" type="Node2D" unique_id=1903917658]
+script = ExtResource("1_72ey7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=881716928]
+texture = ExtResource("1_hry4s")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=197451349 groups=["apple_pie_pot"]]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Area2D" unique_id=512078661]
+polygon = PackedVector2Array(-25, 1, -25, 4, -23, 7, -22, 10, -21, 13, -20, 14, -19, 15, -18, 16, 20, 16, 21, 15, 22, 14, 23, 13, 24, 10, 25, 7, 27, 4, 27, 1)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://crgmprkwqel10"]
+
+[ext_resource type="Texture2D" uid="uid://c04l2bkigltjo" path="res://assets/FREE Pixel Art Bar and Cafe Items Pack/FREE Pixel Art Bar and Cafe Items Pack/Blender 1.png" id="1_fpkbn"]
+
+[node name="Blender" type="Node2D" unique_id=1612134387]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=166168051]
+texture = ExtResource("1_fpkbn")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2028579180 groups=["blender"]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=198215737]
+polygon = PackedVector2Array(-5, 5, 3, 5, 3, 3, 4, 3, 4, -1, 5, -1, 5, -10, -7, -10, -7, -1, -6, -1, -6, 3, -5, 3)

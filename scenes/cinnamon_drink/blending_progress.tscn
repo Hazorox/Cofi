@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://djdh3dyciy2o8"]
+
+[ext_resource type="Script" uid="uid://dwlxosoq2bu12" path="res://scenes/cinnamon_drink/blending_progress.gd" id="1_e4nkk"]
+[ext_resource type="Texture2D" uid="uid://c04l2bkigltjo" path="res://assets/FREE Pixel Art Bar and Cafe Items Pack/FREE Pixel Art Bar and Cafe Items Pack/Blender 1.png" id="1_wqo3v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_onkbk"]
+radius = 5.0990195
+
+[node name="BlendingProgress" type="Node2D" unique_id=1748904216]
+scale = Vector2(2, 2)
+script = ExtResource("1_e4nkk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1920696507]
+texture = ExtResource("1_wqo3v")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1591376311]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1210906045]
+position = Vector2(-1, 9)
+shape = SubResource("CircleShape2D_onkbk")
+
+[node name="DisappearingTimer" type="Timer" parent="." unique_id=1069362123]
+wait_time = 0.75
+autostart = true
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="timeout" from="DisappearingTimer" to="." method="_on_disappearing_timer_timeout"]

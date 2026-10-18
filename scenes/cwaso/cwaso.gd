@@ -13,13 +13,13 @@ func _process(delta: float) -> void:
 	elif holding and not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		holding = false
 		dough.pause()
-		
-
-func _exit_tree() -> void:
-	Input.set_custom_mouse_cursor(null)
+	
 
 func _on_dough_animation_looped() -> void:
 	folds += 1
 	print(folds)
 	if folds == 3:
-		get_tree().change_scene_to_file("res://scenes/cofi/cofi.tscn")
+		get_tree().change_scene_to_file("res://scenes/cwaso/cwaso_cut.tscn")
+
+func _exit_tree() -> void:
+	Input.set_custom_mouse_cursor(null, Input.CURSOR_ARROW, Vector2(0,0))
